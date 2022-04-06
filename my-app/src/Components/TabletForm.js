@@ -3,9 +3,12 @@ import React, { useState } from "react";
 import Slider from '@mui/material/Slider';
 import Button from '@mui/material/Button';
 import SendIcon from '@mui/icons-material/Send';
-import TextField from '@mui/material/TextField';
-import Autocomplete from '@mui/material/Autocomplete';
-import Nala from "../api/Nala"
+import OutlinedInput from '@mui/material/OutlinedInput';
+import MenuItem from '@mui/material/MenuItem';
+import Select from '@mui/material/Select';
+import InputLabel from '@mui/material/InputLabel';
+
+import Nala from "../api/Nala";
 
 /* 
 This component will consist of the imput for the form
@@ -39,9 +42,14 @@ const checkValue = (value) => {
 
 const TabletForm = () => {
     const [sliderValue, setSliderValue] = useState(12);
+    const [person, setPerson] = React.useState('SELECT');
 
-    function handleOnChange(event, value) {
-        setSliderValue(parseFloat(value))
+    function handleSlider(event, value) {
+        setSliderValue(parseFloat(value));
+    }
+
+    function handleDropDown(event, value){
+        setPerson(event.target.value);
     }
 
     const handleSubmit = async () => {
@@ -58,15 +66,20 @@ const TabletForm = () => {
     }
 
     return (
-        <div >
+        <div>
             <div className="form">
-                <div>
-                    <Autocomplete
-                        disablePortal
-                        id="combo-box-demo"
-                        sx={{ width: 300 }}
-                        renderInput={(params) => <TextField {...params} label="Movie" />}
-                    />
+                <div className='dropdownPos'>
+                        <Select
+                            className='dropdown'
+                            labelId="demo-simple-select-autowidth-label"
+                            id="demo-simple-select-autowidth"
+                            onChange={handleDropDown}
+                        >
+                            <MenuItem value={10}>Damian 1</MenuItem>
+                            <MenuItem value={21}>Damian 2</MenuItem>
+                            <MenuItem value={22}>Damian 3</MenuItem>
+                            <MenuItem value={22}>Damian 4</MenuItem>
+                        </Select>
                 </div>
                 <div className='time-scale'>
                     <Slider
@@ -78,7 +91,7 @@ const TabletForm = () => {
                         max={23.5}
                         value={sliderValue}
                         className='time'
-                        onChange={handleOnChange}
+                        onChange={handleSlider}
                     />
                 </div>
                 <div className='timeText'>
