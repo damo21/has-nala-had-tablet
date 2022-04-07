@@ -4,7 +4,7 @@ const productionDomain = "https://nala-backend-tablet.herokuapp.com/";
 
 const developmentDomain = "http://localhost:3333";
 
-const environment =  "development";
+const environment =  "production"; // production | development
 
 const backendDomain = environment === "development" ? developmentDomain : productionDomain;
 
