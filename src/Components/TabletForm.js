@@ -80,11 +80,11 @@ const TabletForm = (props) => {
                     onChange={handleDropDown}
                     value={person}
                 >
-                    <MenuItem value={"Damian"}>Damian 1</MenuItem>
-                    <MenuItem value={"Damian2"}>Damian 2</MenuItem>
-                    <MenuItem value={"Damian3"}>Damian 3</MenuItem>
-                    <MenuItem value={"Damian4"}>Damian 4</MenuItem>
-                    <MenuItem value={"Damian5"}>Damian 5</MenuItem>
+                    <MenuItem value={"Damian"}>Damian</MenuItem>
+                    <MenuItem value={"Olivia"}>Olivia</MenuItem>
+                    <MenuItem value={"Jola"}>Jola</MenuItem>
+                    <MenuItem value={"Wojtek"}>Wojtek</MenuItem>
+                    <MenuItem value={"Nicole"}>Nicole</MenuItem>
                 </Select>
             </div>
             <div className='time-scale'>
