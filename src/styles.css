@@ -116,8 +116,9 @@ and (min-device-width: 350px)  {
 
   .dropdown-Result {
     position: absolute;
-    margin-left: 10%;
+    margin-left: 13%;
     margin-top: 25%;
+    font-size: 13px;
   }
   
   .time-scale {
