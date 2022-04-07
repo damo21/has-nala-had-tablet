@@ -1,15 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap");
 
-html{
+html {
   height: 100%;
   width: 100%;
 }
 
-h1{
-  font-family: 'Fjalla One', sans-serif;
+h1 {
+  font-family: "Fjalla One", sans-serif;
 }
 
-.form{
+.form {
   position: relative;
   margin-left: 2.5%;
   margin-top: 5%;
@@ -19,9 +19,9 @@ h1{
   height: 750px;
 }
 
-.form2{
+.form2 {
   position: relative;
-  float:right;
+  float: right;
   margin-top: -39.4%;
   margin-right: 2.5%;
   box-shadow: 0 0 20px #343d46;
@@ -30,47 +30,96 @@ h1{
   height: 750px;
 }
 
-.dropdownPos{
+.dropdownPos {
   position: absolute;
-  top:32.5%;
-  left:44%;
+  top: 32.5%;
+  left: 44%;
+  height: 100%;
 }
 
-.dropdown{
-  font-family: 'Fjalla One', sans-serif!important;
-  font-size: 18px!important;
+.dropdown {
+  font-family: "Fjalla One", sans-serif !important;
+  font-size: 18px !important;
   width: 100% !important;
 }
 
-.dropdown-Result{
-  position:absolute;
+.dropdown-Result {
+  position: absolute;
   margin-left: 34%;
   margin-top: 30%;
 }
 
-
-.time-scale{
+.time-scale {
   position: absolute;
-  top:45.5%;
-  left:18%;
+  top: 45.5%;
+  left: 18%;
   width: 65%;
 }
 
-.timeText{
+.timeText {
   position: absolute;
-  top:50%;
-  left:26.5%;
+  top: 50%;
+  left: 26.5%;
 }
 
-.time{
-  color: green!important;
+.time {
+  color: green !important;
 }
 
-.sendButtonPosition{
+.sendButtonPosition {
   position: absolute;
-  top:62.5%;
-  left:45%;
+  top: 62.5%;
+  left: 45%;
 }
-.sendButton{
-  background-color: green!important;
+.sendButton {
+  background-color: green !important;
+}
+
+@media only screen and (max-width: 750px) {
+  .form {
+    position: absolute;
+    box-shadow: 0 0 20px #343d46;
+    border-radius: 50px;
+    height: 550px;
+    width: 550px;
+    left: 9.5%;
+  }
+
+  .dropdownPos {
+    position: absolute;
+    top: 32.5%;
+    left: 43%;
+    height: 100%;
+  }
+
+  .form2 {
+    position: absolute;
+    box-shadow: 0 0 20px #343d46;
+    border-radius: 50px;
+    margin-top: 25%;
+    height: 550px;
+    width: 550px;
+    left: 12%;
+    top: 40%;
+  }
+
+
+  .timeText {
+    position: absolute;
+    top: 50%;
+    left: 13%;
+  }
+
+  .sendButtonPosition {
+    position: absolute;
+    top: 62.5%;
+    left:41.5%;
+  }
+
+  .dropdown-Result {
+    position: absolute;
+    margin-left: 28%;
+    margin-top: 35%;
+  }
+  
 }
