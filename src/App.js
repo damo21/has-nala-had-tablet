@@ -16,7 +16,6 @@ function App() {
 
   const getUser = async () => {
     try {
-      alert("get user has ran")
       // get a random user from the database and populate the fields
       const res = await Nala.post("/getUser");
       setPersonName(res.data.user.name)
