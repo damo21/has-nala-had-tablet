@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const productionDomain = "https://nala-backend-tablet.herokuapp.com/";
+const productionDomain = "https://nala-backend-tablet.herokuapp.com";
 
 const developmentDomain = "http://localhost:3333";
 
