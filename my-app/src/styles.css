@@ -11,9 +11,19 @@ h1{
 
 .form{
   position: relative;
-  border: 1px solid black;
   margin-left: 2.5%;
   margin-top: 5%;
+  box-shadow: 0 0 20px #343d46;
+  border-radius: 50px;
+  width: 750px;
+  height: 750px;
+}
+
+.form2{
+  position: relative;
+  float:right;
+  margin-top: -39.4%;
+  margin-right: 2.5%;
   box-shadow: 0 0 20px #343d46;
   border-radius: 50px;
   width: 750px;
@@ -23,17 +33,26 @@ h1{
 .dropdownPos{
   position: absolute;
   top:32.5%;
-  left:30%;
+  left:44%;
 }
 
 .dropdown{
-  width: 100% !important;;
+  font-family: 'Fjalla One', sans-serif!important;
+  font-size: 18px!important;
+  width: 100% !important;
 }
+
+.dropdown-Result{
+  position:absolute;
+  margin-left: 34%;
+  margin-top: 30%;
+}
+
 
 .time-scale{
   position: absolute;
   top:45.5%;
-  left:20%;
+  left:18%;
   width: 65%;
 }
 
@@ -50,7 +69,7 @@ h1{
 .sendButtonPosition{
   position: absolute;
   top:62.5%;
-  left:43%;
+  left:45%;
 }
 .sendButton{
   background-color: green!important;

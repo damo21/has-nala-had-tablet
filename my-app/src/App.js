@@ -1,4 +1,5 @@
 import TabletForm from "./Components/TabletForm";
+import DisplayForm from "./Components/DisplayForm";
 
 
 function App() {
@@ -6,6 +7,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <TabletForm/>
+        <DisplayForm/>
       </header>
     </div>
   );

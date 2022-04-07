@@ -3,10 +3,8 @@ import React, { useState } from "react";
 import Slider from '@mui/material/Slider';
 import Button from '@mui/material/Button';
 import SendIcon from '@mui/icons-material/Send';
-import OutlinedInput from '@mui/material/OutlinedInput';
 import MenuItem from '@mui/material/MenuItem';
 import Select from '@mui/material/Select';
-import InputLabel from '@mui/material/InputLabel';
 
 import Nala from "../api/Nala";
 
@@ -42,13 +40,13 @@ const checkValue = (value) => {
 
 const TabletForm = () => {
     const [sliderValue, setSliderValue] = useState(12);
-    const [person, setPerson] = React.useState('SELECT');
+    const [person, setPerson] = React.useState("Damian");
 
     function handleSlider(event, value) {
         setSliderValue(parseFloat(value));
     }
 
-    function handleDropDown(event, value){
+    function handleDropDown(event, value) {
         setPerson(event.target.value);
     }
 
@@ -56,59 +54,59 @@ const TabletForm = () => {
         // this is a asnyc function that handles the user clicking submit
         try {
             const response = await Nala.post("/createUser", {
-                name: "Dam",
-                age: 23
+                name: person,
+                time: sliderValue
             });
-            console.log(response.data);
+
         } catch (error) {
             console.log(error);
         }
     }
 
     return (
-        <div>
-            <div className="form">
-                <div className='dropdownPos'>
-                        <Select
-                            className='dropdown'
-                            labelId="demo-simple-select-autowidth-label"
-                            id="demo-simple-select-autowidth"
-                            onChange={handleDropDown}
-                        >
-                            <MenuItem value={10}>Damian 1</MenuItem>
-                            <MenuItem value={21}>Damian 2</MenuItem>
-                            <MenuItem value={22}>Damian 3</MenuItem>
-                            <MenuItem value={22}>Damian 4</MenuItem>
-                        </Select>
-                </div>
-                <div className='time-scale'>
-                    <Slider
-                        key="time-scale-slider"
-                        size='large'
-                        step={0.5}
-                        aria-label="Temperature"
-                        min={0}
-                        max={23.5}
-                        value={sliderValue}
-                        className='time'
-                        onChange={handleSlider}
-                    />
-                </div>
-                <div className='timeText'>
-                    <h1>
-                        Current Time Selected: {checkValue(sliderValue)}
-                    </h1>
-                </div>
-                <div className='sendButtonPosition'>
-                    <Button
-                        className='sendButton'
-                        variant="contained"
-                        endIcon={<SendIcon />}
-                        onClick={handleSubmit}
-                    >
-                        Send
-                    </Button>
-                </div>
+        <div className="form">
+            <div className='dropdownPos'>
+                <Select
+                    className='dropdown'
+                    labelId="demo-simple-select-autowidth-label"
+                    id="demo-simple-select-autowidth"
+                    onChange={handleDropDown}
+                    value={person}
+                >
+                    <MenuItem value={"Damian"}>Damian 1</MenuItem>
+                    <MenuItem value={"Damian2"}>Damian 2</MenuItem>
+                    <MenuItem value={"Damian3"}>Damian 3</MenuItem>
+                    <MenuItem value={"Damian4"}>Damian 4</MenuItem>
+                    <MenuItem value={"Damian5"}>Damian 5</MenuItem>
+                </Select>
+            </div>
+            <div className='time-scale'>
+                <Slider
+                    key="time-scale-slider"
+                    size='large'
+                    step={0.5}
+                    aria-label="Temperature"
+                    min={0}
+                    max={23.5}
+                    value={sliderValue}
+                    className='time'
+                    onChange={handleSlider}
+                />
+            </div>
+            <div className='timeText'>
+                <h1>
+                    Current Time Selected: {checkValue(sliderValue)}
+                </h1>
+            </div>
+            <div className='sendButtonPosition'>
+                <Button
+                    className='sendButton'
+                    variant="contained"
+                    endIcon={<SendIcon />}
+                    onClick={handleSubmit}
+                >
+                    Send
+                </Button>
             </div>
         </div>
     );
