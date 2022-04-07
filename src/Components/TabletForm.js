@@ -37,10 +37,12 @@ const checkValue = (value) => {
     }
 }
 
+const delay = ms => new Promise(res => setTimeout(res, ms));
 
-const TabletForm = () => {
+const TabletForm = (props) => {
     const [sliderValue, setSliderValue] = useState(12);
     const [person, setPerson] = React.useState("Damian");
+    const [isLoading, setIsLoading] = useState(false);
 
     function handleSlider(event, value) {
         setSliderValue(parseFloat(value));
@@ -52,16 +54,20 @@ const TabletForm = () => {
 
     const handleSubmit = async () => {
         // this is a asnyc function that handles the user clicking submit
+        setIsLoading(true)
         try {
+            await delay(4000);
             const response = await Nala.post("/createUser", {
                 name: person,
                 time: sliderValue
             });
+            setIsLoading(false)
 
         } catch (error) {
+            setIsLoading(false)
             console.log(error);
         }
-        window.location.reload();
+        props.getUser();
     }
 
     return (
@@ -105,6 +111,7 @@ const TabletForm = () => {
                     variant="contained"
                     endIcon={<SendIcon />}
                     onClick={handleSubmit}
+
                 >
                     Send
                 </Button>
