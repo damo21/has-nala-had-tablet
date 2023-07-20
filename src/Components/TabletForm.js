@@ -81,7 +81,6 @@ const TabletForm = (props) => {
                     value={person}
                 >
                     <MenuItem value={"Damian"}>Damian</MenuItem>
-                    <MenuItem value={"Olivia"}>Olivia</MenuItem>
                     <MenuItem value={"Jola"}>Jola</MenuItem>
                     <MenuItem value={"Wojtek"}>Wojtek</MenuItem>
                     <MenuItem value={"Nicole"}>Nicole</MenuItem>
